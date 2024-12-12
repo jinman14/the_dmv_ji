@@ -5,7 +5,7 @@ class Vehicle
               :year,
               :make,
               :model,
-              :engine
+              :engine,
               :registration_date
 
   def initialize(vehicle_details)
@@ -25,6 +25,7 @@ class Vehicle
   end
 
   def registration_date
-    
+
   end
+  
 end
