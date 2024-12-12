@@ -8,6 +8,8 @@ class Vehicle
               :engine,
               :registration_date
 
+  attr_accessor :registration_date
+
   def initialize(vehicle_details)
     @vin = vehicle_details[:vin]
     @year = vehicle_details[:year]
@@ -25,7 +27,7 @@ class Vehicle
   end
 
   def registration_date
-
+    @registration_date
   end
   
 end
