@@ -27,4 +27,26 @@ RSpec.describe Facility do
       expect(@facility_1.services).to eq(['New Drivers License', 'Renew Drivers License', 'Vehicle Registration'])
     end
   end
+
+  describe '#registered_vehicles' do
+    it 'can check registered vehicles' do
+      expect(@facility_1.registered_vehicles).to eq([])
+    end
+  end
+
+  describe '#collected_fees' do
+    it 'can count collected fees' do
+      expect(@facility_1.collected_fees).to eq(0)
+    end
+  end
+
+  describe '#register_vehicle(vehicle)' do
+    it 'can register a vehicle' do
+      expect(@facility_1.registered_vehicles).to eq([])
+
+      @facility_1.register_vehicle(@cruz)
+
+      expect(@facility_1.registered_vehicles).to eq([@cruz])
+    end
+  end
 end
