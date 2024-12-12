@@ -1,8 +1,7 @@
 class Registrant
     attr_reader :name, 
                 :age, 
-                :license_data, 
-                :permit
+                :license_data 
 
     def initialize(name, age, permit = false)
         @name = name
@@ -14,4 +13,13 @@ class Registrant
         }
         @permit = permit
     end
+
+    def permit?
+        @permit
+    end
+
+    def earn_permit
+        @permit = true
+    end
+
 end
