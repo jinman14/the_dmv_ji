@@ -82,4 +82,32 @@ RSpec.describe Facility do
       expect(@facility_1.collected_fees).to eq(325)
     end
   end
+
+  describe 'second vehicle checks' do
+    it 'can check another vehicle at a facility' do
+      @facility_1.register_vehicle(@cruz)
+      @facility_1.register_vehicle(@bolt)
+      @facility_1.register_vehicle(@camaro)
+
+      expect(@facility_1.registered_vehicles).to eq([@cruz, @bolt, @camaro])
+
+      expect(@bolt.registration_date).to eq(Date.today)
+    end
+  end
+
+  describe 'check facility 2' do
+    it 'can ensure facility 2 is still empty' do
+      @facility_1.register_vehicle(@cruz)
+      @facility_1.register_vehicle(@bolt)
+      @facility_1.register_vehicle(@camaro)
+
+      expect(@facility_2.registered_vehicles).to eq([])
+      expect(@facility_2.services).to eq([])
+
+      # @facility_2.register_vehicle(@bolt)
+
+      # expect(@facility_2.registered_vehicles).to eq([]) figure out what the pathway means by adding this
+      expect(@facility_2.collected_fees).to eq(0)
+    end
+  end
 end
