@@ -6,7 +6,8 @@ class Vehicle
               :make,
               :model,
               :engine,
-              :registration_date
+              :registration_date,
+              :plate_type
 
   attr_accessor :registration_date
 
@@ -30,4 +31,13 @@ class Vehicle
     @registration_date
   end
   
+  def plate_type
+    if antique? == true
+      @plate_type = :antique
+    elsif electric_vehicle? == true
+      @plate_type = :ev
+    else
+      @plate_type = :regular
+    end
+  end
 end

@@ -34,4 +34,12 @@ RSpec.describe Vehicle do
     end
   end
 
+  describe '#plate_type' do
+    it 'can tell plate type' do
+      expect(@cruz.plate_type).to eq(:regular)
+      expect(@bolt.plate_type).to eq(:ev)
+      expect(@camaro.plate_type).to eq(:antique)
+    end
+  end
+  
 end

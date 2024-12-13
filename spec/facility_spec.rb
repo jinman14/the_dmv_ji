@@ -51,13 +51,18 @@ RSpec.describe Facility do
   end
 
   describe '#registration_date' do
-  it 'it can tell the registration date as today' do
-    expect(@cruz.registration_date).to eq(nil)
-    expect(@facility_1.registered_vehicles).to eq([])
+    it 'it can tell the registration date as today' do
+      expect(@cruz.registration_date).to eq(nil)
+      expect(@facility_1.registered_vehicles).to eq([])
 
-    @facility_1.register_vehicle(@cruz)
+      @facility_1.register_vehicle(@cruz)
 
-    expect(@cruz.registration_date).to eq(Date.today)
+      expect(@cruz.registration_date).to eq(Date.today)
+    end
   end
-end
+
+  describe '#plate_type' do
+    it 'it can tell the type of plate' do
+    end
+  end
 end
