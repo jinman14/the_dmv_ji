@@ -66,11 +66,20 @@ RSpec.describe Facility do
       @facility_1.register_vehicle(@cruz)
       @facility_1.register_vehicle(@bolt)
       @facility_1.register_vehicle(@camaro)
-      
+
       expect(@cruz.plate_type).to eq(:regular)
       expect(@bolt.plate_type).to eq(:ev)
       expect(@camaro.plate_type).to eq(:antique)
     end
   end
 
+  describe '#collected_fees' do
+    it 'can calculate a facilities collected fees' do
+      @facility_1.register_vehicle(@cruz)
+      @facility_1.register_vehicle(@bolt)
+      @facility_1.register_vehicle(@camaro)
+
+      expect(@facility_1.collected_fees).to eq(325)
+    end
+  end
 end
