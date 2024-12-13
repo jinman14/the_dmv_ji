@@ -62,7 +62,15 @@ RSpec.describe Facility do
   end
 
   describe '#plate_type' do
-    it 'it can tell the type of plate' do
+    it 'can tell plate type' do
+      @facility_1.register_vehicle(@cruz)
+      @facility_1.register_vehicle(@bolt)
+      @facility_1.register_vehicle(@camaro)
+      
+      expect(@cruz.plate_type).to eq(:regular)
+      expect(@bolt.plate_type).to eq(:ev)
+      expect(@camaro.plate_type).to eq(:antique)
     end
   end
+
 end
