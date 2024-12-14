@@ -38,5 +38,16 @@ class Facility
     @collected_fees
   end
 
+  def administer_written_test(registrant)
+    if registrant.age >= 16
+      registrant.license_data[:written] = true
+    end
+  end
+
+  def administer_road_test(registrant)
+    if registrant.license_data[:written] == true
+      registrant.license_data[:license] = true
+    end
+  end
   
 end
