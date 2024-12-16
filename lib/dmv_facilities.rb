@@ -9,8 +9,8 @@ class DMVFacility
 
         office_details.each do |office|
             new_facility = Facility.new({
-                :name => office[:dmv_office]
-                :address => office[:address_li]
+                :name => office[:dmv_office],
+                :address => office[:address_li],
                 :phone => office[:phone]
             })
 
