@@ -114,9 +114,26 @@ RSpec.describe Facility do
     end
   end
 
-  describe "#administer_writen_test" do
+  describe "#administer_written_test" do
     it 'can offer the written test' do
-      @registrant_1
-    end
+      expect(@registrant_1.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
+      expect(@registrant_1.permit?).to eq(true)
+
+      @facility_1.add_service('Written Test')
+      @facility_1.administer_written_test(@registrant_1)
+
+      @facility_1.administer_written_test(@registrant_2)
+      expect(@registrant_2.license_data).to eq({:written=>false, :license=>false, :renewed=>false})
+
+      @registrant_2.earn_permit
+
+      @facility_1.administer_written_test(@registrant_2)
+
+      expect(@registrant_1.license_data).to eq({:written=>true, :license=>false, :renewed=>false})
+      expect(@registrant_2.license_data).to eq({:written=>true, :license=>false, :renewed=>false})    end
+  end
+
+  describe "#administer_road_test" do
+    it 'can offer the road test' do
   end
 end
