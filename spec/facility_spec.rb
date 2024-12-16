@@ -7,6 +7,9 @@ RSpec.describe Facility do
     @cruz = Vehicle.new({vin: '123456789abcdefgh', year: 2012, make: 'Chevrolet', model: 'Cruz', engine: :ice} )
     @bolt = Vehicle.new({vin: '987654321abcdefgh', year: 2019, make: 'Chevrolet', model: 'Bolt', engine: :ev} )
     @camaro = Vehicle.new({vin: '1a2b3c4d5e6f', year: 1969, make: 'Chevrolet', model: 'Camaro', engine: :ice} )
+    @registrant_1 = Registrant.new('Bruce', 18, true)
+    @registrant_2 = Registrant.new('Penny', 16)
+    @registrant_3 = Registrant.new('Tucker', 15)
   end
   describe '#initialize' do
     it 'can initialize' do
@@ -108,6 +111,12 @@ RSpec.describe Facility do
 
       # expect(@facility_2.registered_vehicles).to eq([]) figure out what the pathway means by adding this
       expect(@facility_2.collected_fees).to eq(0)
+    end
+  end
+
+  describe "#administer_writen_test" do
+    it 'can offer the written test' do
+      @registrant_1
     end
   end
 end
