@@ -11,7 +11,7 @@ class DMVFacility
 
                 new_facility = Facility.new({
                     :name => "#{office[:dmv_office]}#{office[:office_name]}#{office[:name]}",
-                    :address => "#{office[:address_li]}#{office[:street_address_line_1]}#{office[:address1]}",
+                    :address => "#{office[:address_li]}#{office[:street_address_line_1]}#{office[:address1]} #{office[:city]} #{office[:state]} #{office[:zip_code]}#{office[:zipcode]}#{office[:zip]}",
                     :phone => "#{office[:phone]}#{office[:public_phone_number]}"
                     })
 

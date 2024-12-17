@@ -24,7 +24,7 @@ RSpec.describe DMVFacility do
             @dmv_facility_1.create_facility(@co_dmv_office_locations)
             # binding.pry
             expect(@dmv_facility_1.dmv_facility[0].name).to eq("DMV Tremont Branch")
-            expect(@dmv_facility_1.dmv_facility[0].address).to eq("2855 Tremont Place")
+            expect(@dmv_facility_1.dmv_facility[0].address).to eq("2855 Tremont Place Denver CO 80205")
             expect(@dmv_facility_1.dmv_facility[0].phone).to eq("(720) 865-4600")
         end
 
@@ -33,7 +33,7 @@ RSpec.describe DMVFacility do
             @dmv_facility_2.create_facility(@ny_dmv_office_locations)
             # binding.pry
             expect(@dmv_facility_2.dmv_facility[0].name).to eq("LAKE PLACID")
-            expect(@dmv_facility_2.dmv_facility[0].address).to eq("2693 MAIN STREET")
+            expect(@dmv_facility_2.dmv_facility[0].address).to eq("2693 MAIN STREET LAKE PLACID NY 12946")
             expect(@dmv_facility_2.dmv_facility[1].phone).to eq("5188283350")
         end
 
@@ -42,7 +42,7 @@ RSpec.describe DMVFacility do
             @dmv_facility_3.create_facility(@mo_dmv_office_locations)
 
             expect(@dmv_facility_3.dmv_facility[0].name).to eq("Harrisonville")
-            expect(@dmv_facility_3.dmv_facility[0].address).to eq("2009 Plaza Dr.")
+            expect(@dmv_facility_3.dmv_facility[0].address).to eq("2009 Plaza Dr. Harrisonville MO 64701")
             expect(@dmv_facility_3.dmv_facility[0].phone).to eq("(816) 884-4133")
         end
     end
