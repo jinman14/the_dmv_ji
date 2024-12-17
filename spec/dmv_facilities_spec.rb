@@ -46,4 +46,13 @@ RSpec.describe DMVFacility do
             expect(@dmv_facility_3.dmv_facility[0].phone).to eq("(816) 884-4133")
         end
     end
+
+    describe '#hours' do
+        it ' can check hours of given facilities' do
+
+            @dmv_facility_1.create_facility(@co_dmv_office_locations)
+
+            expect(@dmv_facility_1.dmv_facility[0].hours).to eq("Mon, Tue, Thur, Fri  8:00 a.m.- 4:30 p.m. / Wed 8:30 a.m.-4:30 p.m.")
+        end
+    end
 end
