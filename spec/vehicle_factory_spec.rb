@@ -27,7 +27,7 @@ RSpec.describe VehicleFactory do
     describe '#create_vehicles' do
         it 'can check added vehicles created' do
             @factory.create_vehicles(@wa_ev_registrations)
-            # binding.pry
+            
             expect(@factory.cars[0].vin).to eq("WBY8P8C51K")
             expect(@factory.cars[0].make).to eq("BMW")
             expect(@factory.cars[0].model).to eq("i3")

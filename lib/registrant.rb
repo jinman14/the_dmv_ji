@@ -15,7 +15,9 @@ class Registrant
     end
 
     def permit?
+
         @permit
+        
     end
 
     def earn_permit

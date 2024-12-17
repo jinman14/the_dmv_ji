@@ -43,5 +43,4 @@ RSpec.describe Vehicle do
       expect(@cruz.registration_date).to eq(Date.today)
     end
   end
-  
 end

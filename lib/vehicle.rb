@@ -20,15 +20,21 @@ class Vehicle
   end
 
   def antique?
+
     Date.today.year - @year > 25
+
   end
 
   def electric_vehicle?
+
     @engine == :ev
+
   end
 
   def registration_date
+
     @registration_date
+    
   end
   
   def plate_type

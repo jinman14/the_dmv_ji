@@ -14,7 +14,9 @@ class Facility
   end
 
   def add_service(service)
+
     @services << service
+    
   end
 
   def register_vehicle(vehicle)
@@ -27,6 +29,7 @@ class Facility
   end
 
   def collected_fees
+
     @collected_fees = 0
 
     @registered_vehicles.each do |vehicle|

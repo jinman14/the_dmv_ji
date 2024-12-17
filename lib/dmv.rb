@@ -6,7 +6,9 @@ class Dmv
   end
 
   def add_facility(facility)
+
     @facilities << facility
+    
   end
 
   def facilities_offering_service(service)
