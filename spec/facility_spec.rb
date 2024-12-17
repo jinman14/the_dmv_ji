@@ -47,6 +47,7 @@ RSpec.describe Facility do
     it 'can register a vehicle' do
       expect(@facility_1.registered_vehicles).to eq([])
 
+      @facility_1.add_service("Vehicle Registration")
       @facility_1.register_vehicle(@cruz)
 
       expect(@facility_1.registered_vehicles).to eq([@cruz])
@@ -58,6 +59,8 @@ RSpec.describe Facility do
       expect(@cruz.registration_date).to eq(nil)
       expect(@facility_1.registered_vehicles).to eq([])
 
+      @facility_1.add_service("Vehicle Registration")
+
       @facility_1.register_vehicle(@cruz)
 
       expect(@cruz.registration_date).to eq(Date.today)
@@ -66,6 +69,7 @@ RSpec.describe Facility do
 
   describe '#plate_type' do
     it 'can tell plate type' do
+      @facility_1.add_service("Vehicle Registration")
       @facility_1.register_vehicle(@cruz)
       @facility_1.register_vehicle(@bolt)
       @facility_1.register_vehicle(@camaro)
@@ -78,6 +82,7 @@ RSpec.describe Facility do
 
   describe '#collected_fees' do
     it 'can calculate a facilities collected fees' do
+      @facility_1.add_service("Vehicle Registration")
       @facility_1.register_vehicle(@cruz)
       @facility_1.register_vehicle(@bolt)
       @facility_1.register_vehicle(@camaro)
@@ -88,6 +93,7 @@ RSpec.describe Facility do
 
   describe 'second vehicle checks' do
     it 'can check another vehicle at a facility' do
+      @facility_1.add_service("Vehicle Registration")
       @facility_1.register_vehicle(@cruz)
       @facility_1.register_vehicle(@bolt)
       @facility_1.register_vehicle(@camaro)
@@ -100,6 +106,7 @@ RSpec.describe Facility do
 
   describe 'check facility 2' do
     it 'can ensure facility 2 is still empty' do
+      @facility_1.add_service("Vehicle Registration")
       @facility_1.register_vehicle(@cruz)
       @facility_1.register_vehicle(@bolt)
       @facility_1.register_vehicle(@camaro)
@@ -107,9 +114,9 @@ RSpec.describe Facility do
       expect(@facility_2.registered_vehicles).to eq([])
       expect(@facility_2.services).to eq([])
 
-      # @facility_2.register_vehicle(@bolt)
+      @facility_2.register_vehicle(@bolt)
 
-      # expect(@facility_2.registered_vehicles).to eq([]) figure out what the pathway means by adding this
+      expect(@facility_2.registered_vehicles).to eq([])
       expect(@facility_2.collected_fees).to eq(0)
     end
   end
