@@ -32,13 +32,16 @@ class Vehicle
   end
   
   def plate_type
-    
+
     if @registration_date != nil && antique? == true
       @plate_type = :antique
+
     elsif @registration_date != nil && electric_vehicle? == true
       @plate_type = :ev
+
     elsif @registration_date != nil 
       @plate_type = :regular
+      
     else
       @plate_type = nil
     end
